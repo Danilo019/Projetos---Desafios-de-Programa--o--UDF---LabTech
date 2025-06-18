@@ -41,8 +41,10 @@ class ATM:
                         result.append(f"{count_to_take} {note_type}s de {denom}")
         
         if remaining_quantity > 0:
-         raise ValueError("El cajero automático no dispone de billetes/monedas suficientes para esta cantidad, por favor intente otra cantidad.")
-        
+            # If we couldn't fulfill the request with available denominations
+            raise ValueError("El cajero automático no dispone de billetes/monedas suficientes para esta cantidad, por favor intente otra cantidad.")
+
+        # Update actual denominations if withdrawal is successful
         self.denominations_available = temp_denominations
         return result
 

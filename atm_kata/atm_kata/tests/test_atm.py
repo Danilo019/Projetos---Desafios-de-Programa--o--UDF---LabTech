@@ -1,7 +1,7 @@
 import unittest
 
 class TestATM(unittest.TestCase):
-    def test_withdraw_simple_example(self): 
+    def test_withdraw_simple_example(self):
         from atm.atm import ATM
         atm = ATM()
         result = atm.withdraw(30)
@@ -32,6 +32,7 @@ class TestATM(unittest.TestCase):
             atm.withdraw(1000)
 
     def test_initial_atm_state_and_withdrawal(self):
+
         from atm.atm import ATM
         atm = ATM()
         result = atm.withdraw(1725)
@@ -56,10 +57,11 @@ class TestATM(unittest.TestCase):
         }
         self.assertEqual(atm.denominations_available, expected_denominations_after_withdrawal)
 
-    def test_another_withdrawal_after_first(self):             
+    def test_another_withdrawal_after_first(self):
         from atm.atm import ATM
         atm = ATM()
         atm.withdraw(1725)
+
         result = atm.withdraw(1825)
         expected_output = [
             "4 billetes de 100",
